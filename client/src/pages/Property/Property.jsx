@@ -18,8 +18,8 @@ import { Button } from "@mantine/core";
 import { toast } from "react-toastify";
 import Heart from "../../components/Heart/Heart";
 const Property = () => {
-  const { pathname } = useLocation();
-  const id = pathname.split("/").slice(-1)[0];
+  const { pathname } = useLocation(); //it gives the complete url 
+  const id = pathname.split("/").slice(-1)[0]; //this will get the id of the url
   const { data, isLoading, isError } = useQuery(["resd", id], () =>
     getProperty(id)
   );
